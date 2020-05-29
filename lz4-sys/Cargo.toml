@@ -1,12 +1,19 @@
 [package]
 name = "lz4-sys"
-license = "MIT"
-links = "lz4"
-version = "1.9.2"
-authors = [ "Jens Heyens <jens.heyens@ewetel.net", "Artem V. Navrotskiy <bozaro@buzzsoft.ru>" ]
-build = "build.rs"
+version = "2.0.0"
+authors = [
+  "Jens Heyens <jens.heyens@ewetel.net",
+  "Artem V. Navrotskiy <bozaro@buzzsoft.ru>"
+]
+edition = "2018"
 description = "Rust LZ4 sys package."
+documentation = "https://docs.rs/lz4-sys/"
+readme = "README.md"
+homepage = "https://github.com/bozaro/lz4-rs"
 repository = "https://github.com/bozaro/lz4-rs"
+license = "MIT"
+keywords = ["ffi", "lz4"]
+links = "lz4"
 
 [dependencies]
 libc = "0.2.44"
