@@ -1,13 +1,18 @@
 [package]
 name = "lz4"
 version = "1.23.1"
-license = "MIT"
-readme = "README.md"
-authors = [ "Jens Heyens <jens.heyens@ewetel.net>", "Artem V. Navrotskiy <bozaro@buzzsoft.ru>" ]
-description = "Rust LZ4 bindings library."
-repository = "https://github.com/bozaro/lz4-rs"
-documentation = "https://bozaro.github.io/lz4-rs/lz4/"
+authors = [
+  "Jens Heyens <jens.heyens@ewetel.net>",
+  "Artem V. Navrotskiy <bozaro@buzzsoft.ru>"
+]
 edition = "2018"
+description = "Rust LZ4 bindings library."
+documentation = "https://docs.rs/lz4/"
+readme = "README.md"
+homepage = "https://github.com/bozaro/lz4-rs"
+repository = "https://github.com/bozaro/lz4-rs"
+license = "MIT"
+keywords = ["lz4"]
 
 [workspace]
 members = [
@@ -20,4 +25,3 @@ lz4-sys = { version = "2.0.0", path = "lz4-sys" }
 
 [dev-dependencies]
 rand = "0.6.1"
-docmatic = "0.1"
