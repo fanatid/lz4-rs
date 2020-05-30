@@ -9,11 +9,6 @@ repository = "https://github.com/bozaro/lz4-rs"
 documentation = "https://bozaro.github.io/lz4-rs/lz4/"
 edition = "2018"
 
-[[bin]]
-name = "lz4"
-test = false
-doc = false
-
 [dependencies]
 libc = "0.2.44"
 lz4-sys = { path = "lz4-sys", version = "1.8.3" }
