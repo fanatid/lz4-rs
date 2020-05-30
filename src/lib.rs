@@ -1,17 +1,26 @@
-extern crate libc;
-extern crate lz4_sys;
+use std::ffi::CStr;
 
-pub mod liblz4;
+mod error;
+mod frame;
 
-mod decoder;
-mod encoder;
+// re-export
+pub use frame::LZ4FEncoder;
 
-pub mod block;
+/// Get version as usize: `major * 100 * 100 + minor * 100 + patch`.
+///
+/// ```
+/// println!("{}", lz4::version_number());
+/// ```
+pub fn version_number() -> usize {
+    unsafe { lz4_sys::LZ4_versionNumber() as usize }
+}
 
-pub use crate::decoder::Decoder;
-pub use crate::encoder::Encoder;
-pub use crate::encoder::EncoderBuilder;
-pub use crate::liblz4::version;
-pub use crate::liblz4::BlockMode;
-pub use crate::liblz4::BlockSize;
-pub use crate::liblz4::ContentChecksum;
+/// Get version as str: `major.minor.patch`.
+///
+/// ```
+/// println!("{}", lz4::version_string());
+/// ```
+pub fn version_string() -> &'static str {
+    let cstr = unsafe { CStr::from_ptr(lz4_sys::LZ4_versionString()) };
+    cstr.to_str().expect("Invalid version C string")
+}
